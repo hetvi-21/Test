@@ -87,16 +87,16 @@ class HostelStudent(models.Model):
         print(student_data)
         return student_data
 
-    # def action_view_document(self):
-    #     self.ensure_one()
-    #     if not self.document:
-    #         raise UserError("No document uploaded.")
-    #
-    #     return {
-    #         'type': 'ir.actions.act_url',
-    #         'url': f'/web/content?model=hostel.student&id={self.id}&field=document&filename_field=document_filename&download=true',
-    #         'target': 'new',
-    #     }
+    def action_view_document(self):
+        self.ensure_one()
+        if not self.document:
+            raise UserError("No document uploaded.")
+    
+        return {
+            'type': 'ir.actions.act_url',
+            'url': f'/web/content?model=hostel.student&id={self.id}&field=document&filename_field=document_filename&download=true',
+            'target': 'new',
+        }
 
     @api.depends()
     def _compute_student_info(self):
@@ -189,6 +189,9 @@ class HostelStudent(models.Model):
                 self.room_no = "A-"
             elif "B" in self.hostel_block_id.name:
                 self.room_no = "B-"
+
+            else "c" in self .hostel_block_id.name:
+                 self.room_no = "c-"
 
 
     # create method
