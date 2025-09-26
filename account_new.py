@@ -7,3 +7,8 @@ class SaleOrder(models.Model):
     custom_field = fields.Char(string="Custom Field")
     name =  fields.char(stirng ="customer name")
 
+sdkjzx
+siuk
+sdkjzxsai
+ksxlz
+sxklzxlsiw
